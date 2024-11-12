@@ -1,3 +1,29 @@
+<?php
+include 'config.php';
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+  header("Location: dashboard.php");
+  exit();
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $hashed_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+  $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+
+  if ($conn->query($query) === TRUE) {    
+      header("Location: login.php");
+      exit(); 
+  } else {
+      echo "Error: " . $query . "<br>" . $conn->error;
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +41,7 @@
       <form action="" method="post" class="form">
         
         <div class="form__field">
-          <input type="text" placeholder="UserName" name="name">
+          <input type="text" placeholder="UserName" name="username">
         </div>
         <div class="form__field">
           <input type="email" placeholder="info@mailaddress.com" name="email">
@@ -27,26 +53,8 @@
           <input type="submit" value="Sign Up" name="signup">
         </div>
       </form>
-      <p>Already have an accout? <a href="login.php">Signup</a></p>
+      <p>Already have an accout? <a href="login.php">Log in</a></p>
     </div>
   </div>
 </body>
 </html>
-<?php
-include 'config.php';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
-    $username = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-    $query = "INSERT INTO users (username, email, password_hash) VALUES ('$username', '$email', '$password')";
-
-    if ($conn->query($query) === TRUE) {    
-        header("Location: login.php");
-        exit(); 
-    } else {
-        echo "Error: " . $query . "<br>" . $conn->error;
-    }
-}
-?>

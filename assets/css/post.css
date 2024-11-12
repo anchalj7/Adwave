@@ -1,8 +1,9 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+/* Reset default body margin and padding */
+body,
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .container {
@@ -10,13 +11,13 @@ body {
   height: 100vh;
   background-color: white;
   justify-content: center;
+  align-items: center; /* Aligns content vertically */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
 .content {
-  margin-left: 270px;
-  font-family: tmes of roman;
+  font-family: "Times New Roman", Times, serif;
   padding: 20px;
   width: 400px;
   display: flex;
@@ -54,9 +55,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  max-block-size: 50px;
-  text-align: center;
-  /* width: 50%; */
 }
 
 button:hover {

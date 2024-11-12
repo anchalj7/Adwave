@@ -25,7 +25,8 @@ aside {
 }
 
 aside a {
-  font-size: 12px;
+  font-size: 16px;
+  font-family: 'Times of Roman';  
   color: #fff;
   display: block;
   padding: 12px;
@@ -48,10 +49,10 @@ aside a:hover {
 <body>   
 <aside>
   <p> Adwave </p>
-  <a href="">Dashboard</a>
-  <a href="post_ad.php"> Add Post</a>
-  <a href="view_ad.php">View Post</a>
-  <a href="">Logout</a>
+  <a href="dashboard.php">Dashboard</a>
+  <a href="post_ad.php"> Add Ads</a>
+  <a href="view_ad.php">View Ads</a>
+  <a href="logout.php">Logout</a>
 </aside>
 </body>
-</html>
+</html>r

@@ -1,6 +1,10 @@
 <?php
-include 'sidebar.php';
 include 'config.php';
+
+if (!isset($_COOKIE['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,14 +14,17 @@ include 'config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="assets/css/view.css" rel="stylesheet">
+    <link href="assets/css/shared.css" rel="stylesheet">
+
 </head>
 <body>
+<?php include "sidebar.php" ?>
 <div class="container">
     <div class="content">
     <h1>View ads</h1>
     <table>
         <tr>
-        <th>Id</th>
+        <th>S.N.</th>
         <th>Title</th>
         <th>Description</th>
         <th>Category</th>

@@ -1,20 +1,4 @@
 /* Reset default body margin and padding */
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-  background-color: white;
-  justify-content: center;
-  align-items: center; /* Aligns content vertically */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
 
 .content {
   font-family: "Times New Roman", Times, serif;

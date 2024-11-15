@@ -1,0 +1,21 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: white;
+  justify-content: center;
+  align-items: center; /* Aligns content vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}

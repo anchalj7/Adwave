@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-body {
-  font-family: 'Roboto';
-  margin: 0;
-  height: 100vh;
-}
-p{
-    font-family:cursive;
-    font-size:24px;
-}
+ <style>
 aside {
   color: #fff;
   width: 250px;
@@ -45,14 +30,10 @@ aside a:hover {
   border-bottom-left-radius: 20px;
 }
     </style>
-</head>
-<body>   
-<aside>
+    <aside>
   <p> Adwave </p>
-  <a href="dashboard.php">Dashboard</a>
-  <a href="post_ad.php"> Add Ads</a>
   <a href="view_ad.php">View Ads</a>
+  <a href="post_ad.php"> Add Ads</a>
+  <a href="dashboard.php">Dashboard</a>
   <a href="logout.php">Logout</a>
 </aside>
-</body>
-</html>r

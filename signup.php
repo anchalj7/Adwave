@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
-session_start();
+// session_start();
 
-if (isset($_SESSION['user_id'])) {
+if (isset($_COOKIE['user_id'])) {
   header("Location: dashboard.php");
   exit();
 }

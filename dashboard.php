@@ -1,6 +1,10 @@
 <?php
-include "sidebar.php";
-include "config.php"; // Database connection
+include "config.php"; 
+
+if (!isset($_COOKIE['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,19 +13,15 @@ include "config.php"; // Database connection
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
         .container {
             display: flex;
             min-height: 100vh;
         }
         .content {
-            margin-left: 270px; 
+            margin-left: 400px;
             padding: 20px;
             width: calc(100% - 270px);
         }
@@ -76,6 +76,8 @@ include "config.php"; // Database connection
     </style>
 </head>
 <body>
+<?php include "sidebar.php" ?>
+
     <div class="container">
         <div class="content">
             <h2>Dashboard</h2> 
@@ -83,14 +85,13 @@ include "config.php"; // Database connection
 
             <div class="card-container">
                 <?php
-                // Fetch ads data from the database
-                $query = "SELECT * FROM `ads`";
+                $query = "SELECT * FROM `ads` where user_id = " . $_COOKIE['user_id'];
                 $result = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $imagePath = "images/" . $row['image']; // Ensure each ad has a unique image
+                    $imagePath = "images/" . $row['image']; 
                     if (!file_exists($imagePath)) {
-                        $imagePath = "images/default.jpg"; // Set a default image if the image doesn't exist
+                        $imagePath = "images/default.jpg";
                     }
                 ?>
                     <div class="card">

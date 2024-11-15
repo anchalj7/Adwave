@@ -1,4 +1,8 @@
  <style>
+  p{
+    font-family: 'Times of Roman';
+    font-size:"36px";
+  }
 aside {
   color: #fff;
   width: 250px;

@@ -15,7 +15,7 @@ body {
   height: 100vh;
   background-color: white;
   justify-content: center;
-  align-items: center; /* Aligns content vertically */
+  align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }

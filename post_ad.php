@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Ad</title>
     <link rel="stylesheet" href="assets/css/post.css">
+    <link href="assets/css/shared.css" rel="stylesheet">
 </head>
 <body>
 

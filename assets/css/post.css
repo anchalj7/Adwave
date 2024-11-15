@@ -1,6 +1,5 @@
-/* Reset default body margin and padding */
-
 .content {
+  /* margin-left: 400px; */
   font-family: "Times New Roman", Times, serif;
   padding: 20px;
   width: 400px;
